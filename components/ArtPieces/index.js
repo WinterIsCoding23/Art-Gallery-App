@@ -7,9 +7,10 @@ export default function ArtPieces({ pieces }) {
     <div>
       <h1>ArtPieces</h1>
       <div>
-        <ul style={{ listStyle: "none" }}>
+        <ul aria-labelledby="artpieces-list" style={{ listStyle: "none" }}>
+          {/* {console.log("pieces: ", pieces)} */}
           {pieces.map((piece, index) => (
-            <li key={index}>
+            <li aria-labelledby="listItem" key={index}>
               {console.log(piece)}
               <ArtPiecePreview
                 image={piece.imageSource}
