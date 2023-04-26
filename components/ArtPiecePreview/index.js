@@ -12,9 +12,9 @@ const Container = styled.div`
 export default function ArtPiecePreview({ image, title, artist, slug }) {
   return (
     <Container>
-      <Image src={image} alt={slug} width={300} height={300} />
       <h2>{title}</h2>
       <p>{artist}</p>
+      <Image src={image} alt={slug} width={300} height={300} />
     </Container>
   );
 }

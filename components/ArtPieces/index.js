@@ -5,8 +5,7 @@ export default function ArtPieces({ pieces }) {
   console.log(pieces);
   return (
     <div>
-      <h1>ArtPieces</h1>
-      <div>
+      <h1>ArtPieces</h1>      
         <ul aria-labelledby="artpieces-list" style={{ listStyle: "none" }}>
           {/* {console.log("pieces: ", pieces)} */}
           {pieces.map((piece, index) => (
@@ -20,8 +19,7 @@ export default function ArtPieces({ pieces }) {
               />
             </li>
           ))}
-        </ul>
-      </div>
+        </ul>      
     </div>
   );
 }
