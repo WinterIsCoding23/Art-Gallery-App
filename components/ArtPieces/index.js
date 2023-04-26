@@ -7,11 +7,10 @@ export default function ArtPieces({ pieces }) {
     <div>
       <h1>ArtPieces</h1>
       <div>
-        <ul>
+        <ul style={{ listStyle: "none" }}>
           {pieces.map((piece, index) => (
             <li key={index}>
-              {" "}
-              {console.log(piece)};
+              {console.log(piece)}
               <ArtPiecePreview
                 image={piece.imageSource}
                 title={piece.name}
@@ -20,7 +19,6 @@ export default function ArtPieces({ pieces }) {
               />
             </li>
           ))}
-          <p>lorem</p>;
         </ul>
       </div>
     </div>

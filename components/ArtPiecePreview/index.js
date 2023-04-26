@@ -7,11 +7,12 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+  list-style: none;
 `;
 export default function ArtPiecePreview({ image, title, artist, slug }) {
   return (
     <Container>
-      <Image src={image} alt={slug} width={50} height={50} />
+      <Image src={image} alt={slug} width={300} height={300} />
       <h2>{title}</h2>
       <p>{artist}</p>
     </Container>
