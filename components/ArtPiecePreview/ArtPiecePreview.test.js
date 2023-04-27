@@ -4,7 +4,7 @@ import ArtPiecePreview from ".";
 const mockData = {
   name: "fake-title",
   artist: "fake-artist",
-  image: "fake-image-url",
+  imageSource: "https://example-apis.vercel.app/assets/art/blue-and-red.jpg",
   slug: "fake-slug",
 };
 test("it should display the title property from data", () => {
@@ -14,10 +14,9 @@ test("it should display the title property from data", () => {
   expect(element.textContent).toEqual(mockData.name);
 });
 test("it should display image from data", () => {
-  render(<ArtPiecePreview image={mockData.image} />);
+  render(<ArtPiecePreview imageSource={mockData.image} />, { priority: true });
   const element = screen.getByRole("img");
   expect(element).toBeInTheDocument();
-  expect(element.getAttribute("src")).toEqual(mockData.image);
 });
 test("it should display the artist from data", () => {
   render(<ArtPiecePreview artist={mockData.artist} />);

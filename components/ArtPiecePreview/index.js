@@ -8,12 +8,12 @@ const Container = styled.div`
   align-items: center;
   gap: 1rem;
 `;
-export default function ArtPiecePreview({ image, title, artist, slug }) {
+export default function ArtPiecePreview({ imageSource, title, artist, slug }) {
   return (
     <Container>
       <h2>{title}</h2>
       <p>{artist}</p>
-      <Image src={image} alt={slug} width={300} height={300} />
+      <Image src={imageSource} alt={slug} width={300} height={300} />
     </Container>
   );
 }
