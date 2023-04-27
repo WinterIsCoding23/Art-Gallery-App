@@ -1,4 +1,4 @@
-/* import { render, screen, within } from "@testing-library/react";
+import { render, screen, within } from "@testing-library/react";
 import Spotlight from ".";
 
 test("art piece image is displayed", () => {
@@ -12,4 +12,3 @@ test("art piece artist is displayed", () => {
   const artist = screen.getByText("artist");
   expect(artist).toBeInTheDocument();
 });
- */
