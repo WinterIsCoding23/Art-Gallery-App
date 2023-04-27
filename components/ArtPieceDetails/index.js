@@ -27,6 +27,7 @@ export default function ArtPieceDetails({
       <p>{year}</p>
       <p>{genre}</p>
       <Image src={image} alt={title} width={600} height={600} />
+      <FavoriteButton />
       <BackButton onClick={onBackClick}>Back to List</BackButton>
     </Container>
   );
