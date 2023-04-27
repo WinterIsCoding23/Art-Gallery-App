@@ -11,7 +11,7 @@ const Container = styled.div`
   gap: 1rem;
 `;
 export default function ArtPiecePreview({ image, title, artist, slug }) {
-  console.log("image ", image)
+  //console.log("image ", image)
   return (
     <Container>
       <h2>{title}</h2>

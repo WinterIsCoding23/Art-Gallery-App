@@ -24,7 +24,15 @@ export default function App({ Component, pageProps }) {
   //const [ pieces, setPieces ] = useState ()
 
 //artPiecesInfo-state
-//const [artPiecesInfo, setArtPiecesInfo] = useState();
+const [artPiecesInfo, setArtPiecesInfo] = useState([]);
+
+function handleLikeArtPiece(piece){
+  setArtPiecesInfo([...artPiecesInfo, piece.slug]);
+}
+
+function handleUnlikeArtPiece(piece){
+  setArtPiecesInfo(artPiecesInfo.filter((favoriteSlug)=> favoriteSlug !== piece.slug));
+}
 
   return (
     <>
