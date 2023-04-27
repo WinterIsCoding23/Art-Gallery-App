@@ -2,11 +2,13 @@ import Link from "next/link";
 
 export default function Navigation (){
     return (
-        <div>
-            <h4>
-                <Link href="/spotlight">Now in the spotlight:</Link>
+        <container>
+            <div>
+                <Link href="/components/spotlight">Now in the spotlight:</Link>
+            </div>
+            <div>
                 <Link href="/artpieces">You find all art pieces here:</Link>
-            </h4>
-        </div>
+            </div>
+        </container>
     )
 }
