@@ -10,14 +10,14 @@ const Container = styled.div`
   align-items: center;
   gap: 1rem;
 `;
-export default function ArtPiecePreview({ image, title, artist, slug }) {
+export default function ArtPiecePreview({ image, title, artist, slug, handleLike }) {
   //console.log("image ", image)
   return (
     <Container>
       <h2>{title}</h2>
       <p>{artist}</p>
       <Image src={image} alt={slug} width={300} height={300} />
-      <FavoriteButton />
+      <FavoriteButton handleLike={handleLike}/>
     </Container>
   );
 }

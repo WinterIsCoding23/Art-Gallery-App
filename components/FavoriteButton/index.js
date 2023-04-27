@@ -1,7 +1,11 @@
+//import {ReactComponent as Logo} from "../../assets"; 
 
+export default function FavoriteButton ( {isFavorite, slug, handleLike} ){
 
-export default function FavoriteButton ( isFavorite, onToggleFavorite ){
     return (
-        <button onClick={onToggleFavorite()}>Mark as favorite</button>
+        <button onClick={()=> {handleLike(slug)}} >
+            {/* <Logo /> */}
+            {isFavorite ? "No favorite anymore" : "Mark as favorite"}
+        </button>
     )
 }

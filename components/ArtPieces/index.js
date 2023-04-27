@@ -16,7 +16,6 @@ export default function ArtPieces({ pieces }) {
                 title={piece.name}
                 artist={piece.artist}
                 slug={piece.slug}
-                isFavorite=artpieces.find()
               />
             </li>
           ))}
@@ -25,26 +24,3 @@ export default function ArtPieces({ pieces }) {
   );
 }
 
-{
-  /* /* import ArtPiecePreview from "./ArtPiecePreview";
-
-export default function ArtPieces({ pieces }) {
-  return (
-    <div>
-      <h1>Art Pieces</h1>
-      <ul>
-        {pieces.map((piece) => (
-          <li key={piece.id}>
-            <ArtPiecePreview
-              image={piece.image}
-              title={piece.title}
-              artist={piece.artist}
-            />
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-}
- */
-}
