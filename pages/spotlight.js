@@ -1,5 +1,7 @@
-export default function SpotlightTest () {
+import Spotlight from "../components/Spotlight";
+
+export default function SpotlightPage () {
     return (
-        <h1>Hello Test</h1>
+        <div><Spotlight /></div>
     )
 }
