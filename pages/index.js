@@ -19,10 +19,18 @@ export default function App() {
   }
   return (
     <div>
-      <Link href="/components/Spotlight">Spotlight</Link>
-      <Link href="/components/ArtPieces">Pieces</Link>
-      <ArtPieces pieces={data} />
-      <Spotlight />
+      <section>
+        <div>
+          <Link href="/components/spotlight">Spotlight</Link>          
+        </div>
+        <div>
+          <Link href="/components/artpieces">Pieces</Link>
+        </div>
+      </section>
+      <section>
+        <ArtPieces pieces={data} />
+        <Spotlight />
+      </section>
     </div>
   );
 }
