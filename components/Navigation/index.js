@@ -7,7 +7,7 @@ export default function Navigation (){
                 <Link href="./spotlight/">Spotlight</Link>
             </div>
             <div>
-                <Link href="./artpieces/">You find all art pieces here:</Link>
+                <Link href="./artpieces/">All art pieces</Link>
             </div>
         </container>
     )

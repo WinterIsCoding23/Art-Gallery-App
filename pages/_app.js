@@ -2,6 +2,7 @@ import GlobalStyle from "../styles";
 import useSWR from "swr";
 
 import ArtPieces from "../components/ArtPieces";
+import Layout from "../components/Layout";
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
@@ -22,8 +23,9 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <GlobalStyle />
+      <Layout />
       <Component {...pageProps} />
-      {/* <Layout /> */}
+      {/* <Layout /> */}      
       <ArtPieces pieces={data} />
     </>
   );

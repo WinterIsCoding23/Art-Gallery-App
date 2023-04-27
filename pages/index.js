@@ -22,9 +22,7 @@ export default function SpotlightPage() {
   // }
   return (
     <div>
-      <section>
-        <Navigation />
-      </section>
+
       <section>        
         <Spotlight />
       </section>
@@ -40,4 +38,8 @@ export default function SpotlightPage() {
     </div>
   );
 }
+
+      <section>
+        <Navigation />
+      </section>
  */
