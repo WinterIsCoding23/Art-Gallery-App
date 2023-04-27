@@ -17,7 +17,7 @@ export default function ArtPiecePreview({ image, title, artist, slug, handleLike
       <h2>{title}</h2>
       <p>{artist}</p>
       <Image src={image} alt={slug} width={300} height={300} />
-      <FavoriteButton handleLike={handleLike}/>
+      <FavoriteButton slug={slug} isFavorite={isFavorite} handleLike={handleLike}/>
     </Container>
   );
 }

@@ -60,7 +60,7 @@ export default function App({ Component, pageProps }) {
       <GlobalStyle />
       <Layout />
       <Component {...pageProps} data={data}/>
-      <FavoriteButton handleLike={handleLike}/>
+      <FavoriteButton slug={slug} isFavorite={isFavorite} handleLike={handleLike}/>
     </>
   );
 }
