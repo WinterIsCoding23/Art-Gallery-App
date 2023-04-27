@@ -4,10 +4,10 @@ export default function Navigation (){
     return (
         <container>
             <div>
-                <Link href="/components/spotlight">Now in the spotlight:</Link>
+                <Link href="./spotlight/">Spotlight</Link>
             </div>
             <div>
-                <Link href="/artpieces">You find all art pieces here:</Link>
+                <Link href="./artpieces/">You find all art pieces here:</Link>
             </div>
         </container>
     )

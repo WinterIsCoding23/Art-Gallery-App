@@ -23,6 +23,7 @@ export default function App({ Component, pageProps }) {
     <>
       <GlobalStyle />
       <Component {...pageProps} />
+      {/* <Layout /> */}
       <ArtPieces pieces={data} />
     </>
   );
