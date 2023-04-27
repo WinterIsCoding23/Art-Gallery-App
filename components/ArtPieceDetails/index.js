@@ -13,12 +13,25 @@ const BackButton = styled.button`
   margin-top: 1rem;
 `;
 
+const ColorPalette = styled.div`
+  display: flex;
+  gap: 0.5rem;
+`;
+
+const Color = styled.div`
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: ${(props) => props.color};
+`;
+
 export default function ArtPieceDetails({
   image,
   title,
   artist,
   year,
   genre,
+  colors,
   onBackClick,
 }) {
   return (
@@ -27,7 +40,11 @@ export default function ArtPieceDetails({
       <p>{artist}</p>
       <p>{year}</p>
       <p>{genre}</p>
-      <Image src={image} alt={title} width={600} height={600} />
+      <ColorPalette>
+        {colors &&
+          colors.map((color, index) => <Color key={index} color={color} />)}
+      </ColorPalette>
+      <Image src={image} alt={title} width={400} height={400} />
       <Link href={`/`}>
         <BackButton>Back to List</BackButton>
       </Link>
