@@ -45,6 +45,7 @@ function handleLike(piece){
   })
 }
 
+
 if (!data){
   return <h1>Loading...</h1>;
 }
