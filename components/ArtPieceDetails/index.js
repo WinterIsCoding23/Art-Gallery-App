@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Image from "next/image";
+import Link from "next/link";
 
 const Container = styled.div`
   display: flex;
@@ -27,7 +28,9 @@ export default function ArtPieceDetails({
       <p>{year}</p>
       <p>{genre}</p>
       <Image src={image} alt={title} width={600} height={600} />
-      <BackButton onClick={onBackClick}>Back to List</BackButton>
+      <Link href={`/`}>
+        <BackButton>Back to List</BackButton>
+      </Link>
     </Container>
   );
 }
