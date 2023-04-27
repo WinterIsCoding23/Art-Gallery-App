@@ -8,7 +8,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 0.1rem;
 `;
 export default function ArtPiecePreview({ image, title, artist, slug, handleLike }) {
   //console.log("image ", image)
