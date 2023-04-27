@@ -14,7 +14,7 @@ test ("navigation links are displayed", ()=>{
 test ("navigation link labeled spotlight is displayed", ()=>{
     render (<Spotlight />);
     const spotlightLink = screen.getByText("spotlight");
-    expect(artist).toBeInTheDocument();
+    expect(spotlightLink).toBeInTheDocument();
 })
 
 test ("navigation link labeled pieces is displayed", ()=>{
