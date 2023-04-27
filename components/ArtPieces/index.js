@@ -16,6 +16,7 @@ export default function ArtPieces({ pieces }) {
                 title={piece.name}
                 artist={piece.artist}
                 slug={piece.slug}
+                isFavorite=artpieces.find()
               />
             </li>
           ))}
