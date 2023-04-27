@@ -1,10 +1,33 @@
 import Image from "next/image";
+import useSWR from "swr";
 
-export default function Spotlight ( {image, artist} ){
+const fetcher = (...args) => fetch(...args).then((res) => res.json());
+
+const URL = "https://example-apis.vercel.app/api/art";
+
+export default function Spotlight ( { image, artist, title, slug } ){
+        const {data, error, isLoading} = useSWR(URL, fetcher);  
+        //console.log(data)      
+
+        if (error) {
+            return <p>Error: {error.message}</p>;
+          }
+          if (isLoading) {
+            return <p>Loading...</p>;
+          }
+
+          function getRandomArtPiece (data){
+            const randomNumber = Math.floor(Math.random() * data.length);
+          return data[randomNumber];
+        }
+      
+        const randomArtPiece = getRandomArtPiece(data);
+
     return (
         <div>
-            <Image src={image} alt="spotlight"/>
-            <h4>{artist}</h4>
+            <h2>{randomArtPiece.name}</h2>
+            <p>{randomArtPiece.artist}</p>
+            <Image src={randomArtPiece.imageSource} alt={randomArtPiece.slug} artist={randomArtPiece.artist} width={300} height={300}/>            
         </div>
     )
 }

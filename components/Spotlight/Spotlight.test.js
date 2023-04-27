@@ -1,6 +1,5 @@
 import { render, screen, within } from "@testing-library/react";
 import Spotlight from ".";
-import ArtPieces from "../ArtPieces";
 
 test ("art piece image is displayed", ()=>{
     render (<Spotlight src={data.imageSource} alt="spotlight"/>);

@@ -7,7 +7,7 @@ export default function ArtPieces({ pieces }) {
     <div>
       <h1>ArtPieces</h1>      
         <ul aria-labelledby="artpieces-list" style={{ listStyle: "none" }}>
-          {/* {console.log("pieces: ", pieces)} */}
+          {console.log("pieces: ", pieces)}
           {pieces.map((piece, index) => (
             <li aria-labelledby="listItem" key={index}>
               {console.log(piece)}

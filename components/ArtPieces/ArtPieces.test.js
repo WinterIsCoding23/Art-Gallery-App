@@ -1,7 +1,7 @@
 import { render, screen, within } from "@testing-library/react";
 import ArtPieces from ".";
 
-test("displays all art-pieces", async ()=> {
+test("displays all art-pieces", ()=> {
     render(<ArtPieces pieces={[]} />);
     const list = screen.getByRole("list")
     expect(list).toBeInTheDocument();

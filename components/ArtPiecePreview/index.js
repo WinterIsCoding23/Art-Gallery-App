@@ -7,7 +7,6 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  list-style: none;
 `;
 export default function ArtPiecePreview({ image, title, artist, slug }) {
   return (
