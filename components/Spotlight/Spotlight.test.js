@@ -8,7 +8,7 @@ test ("art piece image is displayed", ()=>{
 })
 
 test ("art piece artist is displayed", ()=>{
-    render (<Spotlight src={image} alt="spotlight"/>);
+    render (<Spotlight src={data.artist} alt="spotlight"/>);
     const artist = screen.getByText("artist");
     expect(artist).toBeInTheDocument();
 })
