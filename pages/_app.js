@@ -16,12 +16,13 @@ export default function App({ Component, pageProps }) {
 
   //artPiecesInfo-state
   const [artPiecesInfo, setArtPiecesInfo] = useState(data);
- 
+   
     // Marcell: function handleLikeArtPiece(piece){
     //   setArtPiecesInfo([...artPiecesInfo, piece.slug]);
     // }
 
   function handleLike(piece){
+    // console.log ("piece: ", piece);
     setArtPiecesInfo((artPiecesInfo)=> {
       // find the artpiece in state
       const info = artPiecesInfo.find((info) => info.slug === slug);
@@ -60,7 +61,7 @@ export default function App({ Component, pageProps }) {
       <GlobalStyle />
       <Layout />
       <Component {...pageProps} data={data}/>
-      <FavoriteButton slug={slug} isFavorite={isFavorite} handleLike={handleLike}/>
+      <FavoriteButton  isFavorite={isFavorite} handleLike={handleLike}/>
     </>
   );
 }
