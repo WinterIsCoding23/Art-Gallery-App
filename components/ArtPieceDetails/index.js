@@ -1,9 +1,7 @@
 import styled from "styled-components";
 import Image from "next/image";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import FavoriteButton from "../FavoriteButton";
-
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -38,18 +36,20 @@ export default function ArtPieceDetails({
   const router = useRouter();
   console.log("component colors", colors);
   return (
-    <Container>
-      <h2>{title}</h2>
-      <p>{artist}</p>
-      <p>{year}</p>
-      <p>{genre}</p>
-      <ColorPalette>
-        {colors.map((color, index) => (
-          <Color key={index} color={color} />
-        ))}
-      </ColorPalette>
-      <Image src={image} alt={title} width={400} height={400} />
-      <BackButton onClick={() => router.back()}>Back to List</BackButton>
-    </Container>
+    <>
+      <Container>
+        <h2>{title}</h2>
+        <p>{artist}</p>
+        <p>{year}</p>
+        <p>{genre}</p>
+        <ColorPalette>
+          {colors.map((color, index) => (
+            <Color key={index} color={color} />
+          ))}
+        </ColorPalette>
+        <Image src={image} alt={title} width={400} height={400} />
+        <BackButton onClick={() => router.back()}>Back to List</BackButton>
+      </Container>
+    </>
   );
 }
