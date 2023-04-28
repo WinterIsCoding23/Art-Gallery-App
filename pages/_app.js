@@ -12,15 +12,9 @@ const URL = "https://example-apis.vercel.app/api/art";
 
 export default function App({ Component, pageProps }) {
   const { data, error, isLoading } = useSWR(URL, fetcher);
-  console.log("data inside function App: ", data)
-
   //artPiecesInfo-state
   const [favoriteSlugs, setFavoriteSlugs] = useState([]);
    
-    // Marcell: function handleLikeArtPiece(piece){
-    //   setArtPiecesInfo([...artPiecesInfo, piece.slug]);
-    // }
-
   function handleLike(clickedSlug){
     setFavoriteSlugs((favoriteSlugs)=> {
       // debugger
