@@ -12,7 +12,7 @@ const artPiece = {
 
 test("displays the art piece image", () => {
   render(<ArtPieceDetails {...artPiece} />);
-  const imageElement = screen.getByAltText(artPiece.name);
+  const imageElement = screen.getByRole(artPiece.imageSource);
   expect(imageElement).toBeInTheDocument();
 });
 
