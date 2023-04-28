@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const Container = styled.div`
   display: flex;
@@ -32,8 +33,9 @@ export default function ArtPieceDetails({
   year,
   genre,
   colors,
-  onBackClick,
 }) {
+  const router = useRouter();
+
   return (
     <Container>
       <h2>{title}</h2>
@@ -45,9 +47,7 @@ export default function ArtPieceDetails({
           colors.map((color, index) => <Color key={index} color={color} />)}
       </ColorPalette>
       <Image src={image} alt={title} width={400} height={400} />
-      <Link href={`/`}>
-        <BackButton>Back to List</BackButton>
-      </Link>
+      <BackButton onClick={() => router.back()}>Back to List</BackButton>
     </Container>
   );
 }
