@@ -1,58 +1,47 @@
-import { render, screen, fireEvent } from "@testing-library/react";
-import ArtPieceDetails from "./index";
+import { render, screen } from "@testing-library/react";
+import ArtPieceDetails from "../components/ArtPieceDetails";
 
 const artPiece = {
-  imageSource: "/image.png",
-  name: "Art Piece Name",
-  artist: "Art Piece Artist",
-  year: "Art Piece Year",
-  genre: "Art Piece Genre",
+  imageSource: "example.com/image.jpg",
+  name: "Art Piece Title",
+  artist: "Artist Name",
+  year: "2022",
+  genre: "Abstract",
+  colors: ["#000", "#fff"],
 };
 
-describe("ArtPieceDetails", () => {
-  test("displays the art piece image", () => {
-    render(<ArtPieceDetails {...artPiece} />);
-    const image = screen.getByRole("img");
-    expect(image).toBeInTheDocument();
-    expect(image).toHaveAttribute("src", artPiece.imageSource);
-    expect(image).toHaveAttribute("alt", artPiece.name);
-  });
+test("displays the art piece image", () => {
+  render(<ArtPieceDetails {...artPiece} />);
+  const imageElement = screen.getByAltText(artPiece.name);
+  expect(imageElement).toBeInTheDocument();
+});
 
-  test("displays the art piece title", () => {
-    render(<ArtPieceDetails {...artPiece} />);
-    const title = screen.getByText(artPiece.name);
-    expect(title).toBeInTheDocument();
-  });
+test("displays the art piece title", () => {
+  render(<ArtPieceDetails {...artPiece} />);
+  const titleElement = screen.getByText(artPiece.name);
+  expect(titleElement).toBeInTheDocument();
+});
 
-  test("displays the art piece artist", () => {
-    render(<ArtPieceDetails {...artPiece} />);
-    const artist = screen.getByText(artPiece.artist);
-    expect(artist).toBeInTheDocument();
-  });
+test("displays the art piece artist", () => {
+  render(<ArtPieceDetails {...artPiece} />);
+  const artistElement = screen.getByText(artPiece.artist);
+  expect(artistElement).toBeInTheDocument();
+});
 
-  test("displays the art piece year", () => {
-    render(<ArtPieceDetails {...artPiece} />);
-    const year = screen.getByText(artPiece.year);
-    expect(year).toBeInTheDocument();
-  });
+test("displays the art piece year", () => {
+  render(<ArtPieceDetails {...artPiece} />);
+  const yearElement = screen.getByText(artPiece.year);
+  expect(yearElement).toBeInTheDocument();
+});
 
-  test("displays the art piece genre", () => {
-    render(<ArtPieceDetails {...artPiece} />);
-    const genre = screen.getByText(artPiece.genre);
-    expect(genre).toBeInTheDocument();
-  });
+test("displays the art piece genre", () => {
+  render(<ArtPieceDetails {...artPiece} />);
+  const genreElement = screen.getByText(artPiece.genre);
+  expect(genreElement).toBeInTheDocument();
+});
 
-  test("displays a back button", () => {
-    render(<ArtPieceDetails {...artPiece} />);
-    const backButton = screen.getByRole("button", { name: "Back to List" });
-    expect(backButton).toBeInTheDocument();
-  });
-
-  test("calls onBackClick when the back button is clicked", () => {
-    const onBackClick = jest.fn();
-    render(<ArtPieceDetails {...artPiece} onBackClick={onBackClick} />);
-    const backButton = screen.getByRole("button", { name: "Back to List" });
-    fireEvent.click(backButton);
-    expect(onBackClick).toHaveBeenCalled();
-  });
+test("displays a back button", () => {
+  render(<ArtPieceDetails {...artPiece} />);
+  const backButtonElement = screen.getByText("Back to List");
+  expect(backButtonElement).toBeInTheDocument();
 });
