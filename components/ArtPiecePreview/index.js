@@ -20,7 +20,7 @@ export default function ArtPiecePreview({
   isFavorite,
 }) 
 
-{ const router = useRouter();
+{// { const router = useRouter();
   return (
     <Container>
       <Link href={`/art-pieces/${slug}`}>
