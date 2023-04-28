@@ -50,6 +50,8 @@ export default function ArtPieceDetails({
 
       <Image src={image} alt={title} width={400} height={400} />
       <BackButton onClick={() => router.back()}>Back to List</BackButton>
+      <Image src={image} alt={title} width={600} height={600} />
+      <FavoriteButton />
     </Container>
   );
 }
