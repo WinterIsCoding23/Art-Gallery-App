@@ -1,8 +1,8 @@
 import ArtPieces from "../../components/ArtPieces";
 
-export default function ArtPiecesPage ({data, handleLike}) {
+export default function ArtPiecesPage ({data, handleLike, favoriteSlugs}) {
     console.log("data in ArtPieces: ", data);
     return (
-        <div><ArtPieces pieces={data} handleLike={handleLike}/></div>
+        <div><ArtPieces pieces={data} handleLike={handleLike} favoriteSlugs={favoriteSlugs}/></div>
     )
 }
