@@ -10,6 +10,7 @@ const Container = styled.div`
   align-items: center;
   gap: 0.1rem;
 `;
+
 export default function ArtPiecePreview({
   image,
   title,
@@ -17,8 +18,9 @@ export default function ArtPiecePreview({
   slug,
   handleLike,
   isFavorite,
-}) {
-  const router = useRouter();
+}) 
+
+{ const router = useRouter();
   return (
     <Container>
       <Link href={`/art-pieces/${slug}`}>
