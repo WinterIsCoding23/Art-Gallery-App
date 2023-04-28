@@ -21,16 +21,19 @@ export default function App({ Component, pageProps }) {
     //   setArtPiecesInfo([...artPiecesInfo, piece.slug]);
     // }
 
-  function handleLike(piece){
+  function handleLike(slug){
     // console.log ("piece: ", piece);
+    // console.log("slug: ", slug);    
     setArtPiecesInfo((artPiecesInfo)=> {
+      // console.log("artPiecesInfo: ", artPiecesInfo);
+      // console.log("slug: ", slug);
       // find the artpiece in state
       const info = artPiecesInfo.find((info) => info.slug === slug);
 
       // if artpiece is already in state, toggle the isFavorite-property
       if (info){
         return artPiecesInfo.map((info) => 
-          info.slug === piece.slug ? {...info, isFavorite: !info.isFavorite } : info );
+          info.slug === slug ? {...info, isFavorite: !info.isFavorite } : info );
       }
       // if artpiece is not in the state, add it with isFavorite set to true
       return [...artPiecesInfo, { slug, isFavorite: true }];
