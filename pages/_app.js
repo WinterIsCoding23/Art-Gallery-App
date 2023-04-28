@@ -23,9 +23,10 @@ export default function App({ Component, pageProps }) {
 
   function handleLike(clickedSlug){
     setFavoriteSlugs((favoriteSlugs)=> {
+      // debugger
       const isFavorite = favoriteSlugs.find((slug) => slug === clickedSlug);
       if (isFavorite){
-        return favoriteSlugs.filter((slug) => slug === clickedSlug);
+        return favoriteSlugs.filter((slug) => slug !== clickedSlug);
       }
       return [...favoriteSlugs, clickedSlug];
     })
