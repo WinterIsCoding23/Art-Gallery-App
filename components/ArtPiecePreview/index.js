@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
-
+import { useRouter } from "next/router";
 import FavoriteButton from "../FavoriteButton";
 
 const Container = styled.div`
@@ -18,19 +18,19 @@ export default function ArtPiecePreview({
   handleLike,
   isFavorite,
 }) {
-  //console.log("image ", image)
+  const router = useRouter();
   return (
     <Container>
       <Link href={`/art-pieces/${slug}`}>
         <h2>{title}</h2>
         <p>{artist}</p>
         <Image src={image} alt={slug} width={300} height={300} />
-        <FavoriteButton
-          slug={slug}
-          isFavorite={isFavorite}
-          handleLike={handleLike}
-        />
       </Link>
+      <FavoriteButton
+        slug={slug}
+        isFavorite={isFavorite}
+        handleLike={handleLike}
+      />
     </Container>
   );
 }

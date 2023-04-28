@@ -28,7 +28,7 @@ export default function Spotlight({
     const randomNumber = Math.floor(Math.random() * data.length);
     return data[randomNumber];
   }
-
+  const randomArtPiece = getRandomArtPiece(data);
   return (
     <div>
       <h2>{randomArtPiece.name}</h2>
