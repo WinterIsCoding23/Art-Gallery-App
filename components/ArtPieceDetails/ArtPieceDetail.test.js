@@ -1,25 +1,25 @@
-// import { render, screen } from "@testing-library/react";
-// import ArtPieceDetails from "../components/ArtPieceDetails";
+import { render, screen } from "@testing-library/react";
+import ArtPieceDetails from ".";
 
-// const artPiece = {
-//   imageSource: "example.com/image.jpg",
-//   name: "Art Piece Title",
-//   artist: "Artist Name",
-//   year: "2022",
-//   genre: "Abstract",
-//   colors: ["#000", "#fff"],
-// };
+const artPiece = {
+   image: "example.com/image.jpg",
+   title: "Art Piece Title",
+   artist: "Artist Name",
+   year: "2022",
+   genre: "Abstract",
+   colors: ["#000", "#fff"],
+};
 
 // test("displays the art piece image", () => {
-//   render(<ArtPieceDetails {...artPiece} />);
-//   const imageElement = screen.getByAltText(artPiece.name);
-//   expect(imageElement).toBeInTheDocument();
+//    render(<ArtPieceDetails {...artPiece} />);
+//    const imageElement = screen.getByAltText(artPiece.image);
+//    expect(imageElement).toBeInTheDocument();
 // });
 
 // test("displays the art piece title", () => {
-//   render(<ArtPieceDetails {...artPiece} />);
-//   const titleElement = screen.getByText(artPiece.name);
-//   expect(titleElement).toBeInTheDocument();
+//    render(<ArtPieceDetails {...artPiece} />);
+//    const titleElement = screen.getByText(artPiece.name);
+//    expect(titleElement).toBeInTheDocument();
 // });
 
 // test("displays the art piece artist", () => {
