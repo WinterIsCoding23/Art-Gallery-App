@@ -1,7 +1,7 @@
 import pieces from "../../pages/index.js";
 import ArtPiecePreview from "../ArtPiecePreview/index.js";
 
-export default function ArtPieces({ pieces }) {
+export default function ArtPieces({ pieces, handleLike }) {
   console.log(pieces);
   return (
     <div>
@@ -16,6 +16,8 @@ export default function ArtPieces({ pieces }) {
                 title={piece.name}
                 artist={piece.artist}
                 slug={piece.slug}
+                isFavorite={piece.isFavorite}
+                handleLike={handleLike}
               />
             </li>
           ))}

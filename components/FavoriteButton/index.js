@@ -3,7 +3,7 @@
 export default function FavoriteButton ( {isFavorite, slug, handleLike} ){
 
     return (
-        <button type="button" isFavorite={isFavorite} onClick={()=> {handleLike(slug)}} >
+        <button type="button" onClick={()=> {handleLike(slug)}} >
             {/* <Logo /> */}
             {isFavorite ? "I don't like this anymore" : "Mark as favorite"}
         </button>

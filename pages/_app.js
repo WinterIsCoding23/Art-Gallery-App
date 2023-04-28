@@ -27,6 +27,10 @@ export default function App({ Component, pageProps }) {
     setArtPiecesInfo((artPiecesInfo)=> {
       // console.log("artPiecesInfo: ", artPiecesInfo);
       // console.log("slug: ", slug);
+      if (!artPiecesInfo){
+        // Don't make any changes
+        return artPiecesInfo
+      }
       // find the artpiece in state
       const info = artPiecesInfo.find((info) => info.slug === slug);
 
@@ -35,8 +39,8 @@ export default function App({ Component, pageProps }) {
         return artPiecesInfo.map((info) => 
           info.slug === slug ? {...info, isFavorite: !info.isFavorite } : info );
       }
-      // if artpiece is not in the state, add it with isFavorite set to true
-      return [...artPiecesInfo, { slug, isFavorite: true }];
+      // if artpiece is not in the state, do nothing
+      return artPiecesInfo;
     })
   }
   console.log("artPiecesInfo inside function App: ", artPiecesInfo)
@@ -63,8 +67,7 @@ export default function App({ Component, pageProps }) {
     <>
       <GlobalStyle />
       <Layout />
-      <Component {...pageProps} data={data}/>
-      <FavoriteButton  isFavorite={isFavorite} handleLike={handleLike}/>
+      <Component {...pageProps} data={data} handleLike={handleLike}/>
     </>
   );
 }

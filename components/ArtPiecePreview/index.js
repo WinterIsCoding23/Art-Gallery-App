@@ -10,7 +10,7 @@ const Container = styled.div`
   align-items: center;
   gap: 0.1rem;
 `;
-export default function ArtPiecePreview({ image, title, artist, slug, handleLike }) {
+export default function ArtPiecePreview({ image, title, artist, slug, handleLike, isFavorite }) {
   //console.log("image ", image)
   return (
     <Container>
