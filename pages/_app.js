@@ -36,9 +36,6 @@ export default function App({ Component, pageProps }) {
     return <h1>Loading...</h1>;
   }
         
-    //Marcell:   artPiecesInfo.map((artPiece)=> {if (artPiece.slug === piece.slug){return artPiece} else {return }  }));
-    // }
-
   return (
     <>
       <GlobalStyle />

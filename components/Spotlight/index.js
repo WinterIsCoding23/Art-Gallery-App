@@ -40,7 +40,8 @@ export default function Spotlight({
         width={300}
         height={300}
       />
-      <FavoriteButton />
+      <FavoriteButton favoriteSlugs={favoriteSlugs} handleLike={handleLike} slug={slug}/>
+      {/* {console.log("favoriteSlugs: ", favoriteSlugs)} */}
     </div>
   );
 }
