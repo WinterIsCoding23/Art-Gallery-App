@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import FavoriteButton from "../FavoriteButton";
 
 const Container = styled.div`
   display: flex;
