@@ -1,5 +1,8 @@
 import styled from "styled-components";
 import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import FavoriteButton from "../FavoriteButton";
 
 const Container = styled.div`
   display: flex;
@@ -12,23 +15,41 @@ const BackButton = styled.button`
   margin-top: 1rem;
 `;
 
+const ColorPalette = styled.div`
+  display: flex;
+  gap: 0.5rem;
+`;
+
+const Color = styled.div`
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: ${(props) => props.color};
+`;
+
 export default function ArtPieceDetails({
   image,
   title,
   artist,
   year,
   genre,
-  onBackClick,
+  colors,
 }) {
+  const router = useRouter();
+  console.log("component colors", colors);
   return (
     <Container>
       <h2>{title}</h2>
       <p>{artist}</p>
       <p>{year}</p>
       <p>{genre}</p>
-      <Image src={image} alt={title} width={600} height={600} />
-      <FavoriteButton />
-      <BackButton onClick={onBackClick}>Back to List</BackButton>
+      <ColorPalette>
+        {colors.map((color, index) => (
+          <Color key={index} color={color} />
+        ))}
+      </ColorPalette>
+      <Image src={image} alt={title} width={400} height={400} />
+      <BackButton onClick={() => router.back()}>Back to List</BackButton>
     </Container>
   );
 }

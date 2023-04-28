@@ -1,22 +1,23 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import ArtPieceDetails from "../../components/ArtPieceDetails";
+import ArtPieceDetails from "../../../components/ArtPieceDetails";
 
-export default function ArtPieceDetailsPage() {
+export default function ArtPieceDetailsPage({ data }) {
   const router = useRouter();
   const [artPiece, setArtPiece] = useState(null);
 
   useEffect(() => {
     if (router.query.slug) {
-      // Fetch the art piece data based on the slug
-      const fetchArtPieceData = async () => {
-        const response = await fetch(`/api/art-pieces/${router.query.slug}`);
-        const data = await response.json();
-        setArtPiece(data);
-      };
-      fetchArtPieceData();
+      // Find the art piece data based on the slug
+      const artPieceData = data.find(
+        (piece) => piece.slug === router.query.slug
+      );
+      setArtPiece(artPieceData);
     }
-  }, [router.query.slug]);
+  }, [router.query.slug, data]);
+
+  console.log("DATA in Slug: ", data);
+  console.log(router.query.slug);
 
   const handleBackClick = () => {
     // Navigate back to the list view
@@ -30,6 +31,7 @@ export default function ArtPieceDetailsPage() {
       artist={artPiece.artist}
       year={artPiece.year}
       genre={artPiece.genre}
+      colors={artPiece.colors}
       onBackClick={handleBackClick}
     />
   ) : (
