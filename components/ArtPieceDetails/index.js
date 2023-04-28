@@ -35,7 +35,7 @@ export default function ArtPieceDetails({
   colors,
 }) {
   const router = useRouter();
-
+  console.log("component colors", colors);
   return (
     <Container>
       <h2>{title}</h2>
@@ -43,11 +43,14 @@ export default function ArtPieceDetails({
       <p>{year}</p>
       <p>{genre}</p>
       <ColorPalette>
-        {colors &&
-          colors.map((color, index) => <Color key={index} color={color} />)}
+        {colors.map((color, index) => (
+          <Color key={index} color={color} />
+        ))}
       </ColorPalette>
+
       <Image src={image} alt={title} width={400} height={400} />
       <BackButton onClick={() => router.back()}>Back to List</BackButton>
     </Container>
   );
 }
+//array inside a object

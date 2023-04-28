@@ -1,6 +1,7 @@
 import ArtPieceDetails from "../components/ArtPieceDetails";
 
 export default function ArtPiecePage({ artPiece }) {
+  console.log("artpiece color", artPiece);
   return (
     <div>
       <ArtPieceDetails

@@ -31,6 +31,7 @@ export default function ArtPieceDetailsPage({ data }) {
       artist={artPiece.artist}
       year={artPiece.year}
       genre={artPiece.genre}
+      colors={artPiece.colors}
       onBackClick={handleBackClick}
     />
   ) : (
