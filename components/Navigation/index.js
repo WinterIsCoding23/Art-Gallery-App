@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Header from "../Header/hearder";
+import Header from "../Header";
 
 export default function Navigation() {
   return (
