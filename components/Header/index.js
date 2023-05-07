@@ -33,7 +33,7 @@ const NavLink = styled.a`
   }
 `;
 
-const Header = () => {
+export default function Header () {
   return (
     <HeaderContainer>
       <Logo>Art Gallery</Logo>
@@ -49,4 +49,3 @@ const Header = () => {
   );
 };
 
-export default Header;

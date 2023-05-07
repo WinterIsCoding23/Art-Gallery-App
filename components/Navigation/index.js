@@ -1,13 +1,36 @@
 import Link from "next/link";
-import Header from "../Header/hearder";
+import styled from "styled-components";
+
+const StyledNavigation = styled.header`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: lightblue;
+ 
+    `
+
+const StyledLink = styled.a`
+    text-decoration: none;
+    &:hover {
+      color: blue;
+    }
+    &: visited {
+      color: darkgreen;
+    }
+    &: active {
+      color: red;
+    }
+    `
 
 export default function Navigation() {
   return (
-    <Header>
-      <section>
-        <div>{/* <Link href="spotlight">Spotlight</Link> */}</div>
-        <div>{/* <Link href="art-pieces">All art pieces</Link> */}</div>
-      </section>{" "}
-    </Header>
+    
+      <StyledNavigation>
+        <div><StyledLink href="/">Home</StyledLink></div>
+        <div><StyledLink href="spotlight">Spotlight</StyledLink></div>
+        <div><StyledLink href="art-pieces">All art pieces</StyledLink></div>
+      </StyledNavigation>
+    
   );
 }
