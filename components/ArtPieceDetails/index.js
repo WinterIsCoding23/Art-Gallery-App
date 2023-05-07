@@ -2,15 +2,36 @@ import styled from "styled-components";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import FavoriteButton from "../FavoriteButton";
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
+
+const StyledArtPieceDetails = styled.div`
+  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+
+    h2 {
+      text-transform: uppercase;      
+    }
+
+    h4 {
+      font-weight: 900;
+      padding: 0px;
+      margin: 5px;
+    }
+
+    p {
+      padding: 0px;
+      margin: 5px;
+    }
+  }
 `;
 
 const BackButton = styled.button`
   margin-top: 1rem;
+  border-radius: 5px;
+  background-color: grey;
+  color: white;
 `;
 
 const ColorPalette = styled.div`
@@ -25,6 +46,11 @@ const Color = styled.div`
   background-color: ${(props) => props.color};
 `;
 
+const StyledImage = styled.img`
+  border-radius: 5px;
+  border: 2px solid black;
+`
+
 export default function ArtPieceDetails({
   image,
   title,
@@ -32,24 +58,28 @@ export default function ArtPieceDetails({
   year,
   genre,
   colors,
-}) {
+}) 
+
+{
   const router = useRouter();
-  console.log("component colors", colors);
+  // console.log("component colors", colors);
+
   return (
     <>
-      <Container>
+      <StyledArtPieceDetails>
         <h2>{title}</h2>
-        <p>{artist}</p>
-        <p>{year}</p>
+        <StyledImage src={image} alt={title} width={300} height={300} />
+        <h4>{artist}</h4>
+        <p style={{fontStyle: "italic"}}>{year}</p>
         <p>{genre}</p>
         <ColorPalette>
           {colors.map((color, index) => (
             <Color key={index} color={color} />
           ))}
         </ColorPalette>
-        <Image src={image} alt={title} width={400} height={400} />
+        
         <BackButton onClick={() => router.back()}>Back to List</BackButton>
-      </Container>
+      </StyledArtPieceDetails>
     </>
   );
 }
